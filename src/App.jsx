@@ -26,15 +26,15 @@ function App() {
                 <NavBar />
                 <Routes>
                   <Route path="/" element={<Home />} />
-                  <Route path="/Catalogo" element={<Catalogue />} />
+                  <Route path="Catalogo" element={<Catalogue />} />
                   <Route
-                    path="/Catalogo/prod/:prodId"
+                    path="Catalogo/prod/:prodId"
                     element={<DetailProductContainer />}
                   />
-                  <Route path="/Contacto" element={<Contact />} />
-                  <Route path="/Sobre nosotros" element={<AboutUs />} />
-                  <Route path="/iniciar-sesion" element={<Login />} />
-                  <Route path="/registrarse" element={<Signup />} />
+                  <Route path="Contacto" element={<Contact />} />
+                  <Route path="Sobre nosotros" element={<AboutUs />} />
+                  <Route path="iniciar-sesion" element={<Login />} />
+                  <Route path="registrarse" element={<Signup />} />
                 </Routes>
                 <Footer />
               </BrowserRouter>
