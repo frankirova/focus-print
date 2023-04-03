@@ -13,6 +13,7 @@ export const NavLinksList = ({ links }) => {
           to={`${navDate}`}
           fontSize={["sm", "sm", "lg", "xl"]}
           fontWeight="500"
+          onClick={() => setDisplay("none")}
         >
           {navDate}
         </Button>

@@ -2,8 +2,16 @@ import { useContext, useState } from "react";
 import { NavLink } from "react-router-dom";
 import { authContext } from "../../context/authContext";
 
-import { Flex, IconButton, Image, Text } from "@chakra-ui/react";
-import { UserMenu, NavButtonGroup, NavLinksList } from "..";
+import {
+  Button,
+  Flex,
+  HStack,
+  IconButton,
+  Image,
+  Text,
+  useDisclosure,
+} from "@chakra-ui/react";
+import { LogOut, NavButtonGroup, NavLinksList } from "..";
 
 import "../../styles/__navbar.css";
 import { faBars, faXmark } from "@fortawesome/free-solid-svg-icons";
@@ -29,7 +37,13 @@ export const NavBar = () => {
       >
         <NavLink to="/">
           {/* <Image src="//placehold.it/128x64" borderRadius="10px"></Image> */}
-          <Text as="h2" letterSpacing=".2rem" fontWeight="bold" fontSize="2rem" color='white'>
+          <Text
+            as="h2"
+            letterSpacing=".2rem"
+            fontWeight="bold"
+            fontSize="2rem"
+            color="white"
+          >
             F<span>O</span>CUS PRINT
           </Text>
         </NavLink>
@@ -47,6 +61,7 @@ export const NavBar = () => {
           fontSize="2xl"
           width="100vw"
           height="100vh"
+          p={6}
           bg={"white"}
           zIndex={20}
           pos="fixed"
@@ -56,24 +71,21 @@ export const NavBar = () => {
           flexDir="column"
           display={display}
         >
-          <Flex justify="end">
+          <HStack justify="end" align>
             <IconButton
               color="primary"
               size="lg"
               icon={<FontAwesomeIcon icon={faXmark} />}
               onClick={() => setDisplay("none")}
             />
-          </Flex>
+          </HStack>
           <NavLinksList links={links} />
+          {!isLoggedIn && <NavButtonGroup />}
         </Flex>
         <Flex gap={2}>
-          {isLoggedIn ? (
-            <>
-              <UserMenu />
-            </>
-          ) : (
-            <NavButtonGroup />
-          )}
+          <Flex display={["none", "none", "flex", "flex"]}>
+            {isLoggedIn ? <LogOut /> : <NavButtonGroup />}
+          </Flex>
 
           <IconButton
             color="primary"

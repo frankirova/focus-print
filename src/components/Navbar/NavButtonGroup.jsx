@@ -2,19 +2,15 @@ import { NavLink } from "react-router-dom";
 import { Button, Flex } from "@chakra-ui/react";
 export const NavButtonGroup = () => {
   return (
-    <Flex
-      fontSize={["sm", "md"]}
-      display={["none", "none", "flex", "flex"]}
-      gap={3}
-    >
+    <Flex gap={3} justify='space-between'>
       <Button
         as={NavLink}
         to="/iniciar-sesion"
-        size={["sm", "sm", "sm", "md"]}
+        // size={["sm", "sm", "sm", "md"]}
         variant="outline"
         fontSize={["sm", "sm", "lg", "xl"]}
         fontWeight="500"
-        bg="black"
+        bg="primary"
         color="white"
       >
         Iniciar sesion
@@ -22,11 +18,11 @@ export const NavButtonGroup = () => {
       <Button
         as={NavLink}
         to="/registrarse"
-        size={["sm", "sm", "sm", "md"]}
+        // size={["sm", "sm", "sm", "md"]}
         variant="outline"
         fontSize={["sm", "sm", "lg", "xl"]}
         fontWeight="500"
-        bg="black"
+        bg="primary"
         color="white"
       >
         Registrarse

@@ -5,7 +5,7 @@ import { Button } from "@chakra-ui/react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faRightFromBracket } from "@fortawesome/free-solid-svg-icons";
 
-export const UserMenu = () => {
+export const LogOut = () => {
   const { setIsLoggedIn } = useContext(authContext);
   const navigate = useNavigate();
 
