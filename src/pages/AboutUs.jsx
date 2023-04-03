@@ -1,13 +1,5 @@
 import { H2, ContainerData } from "../components";
-import {
-  Container,
-  Flex,
-  HStack,
-  Image,
-  Stack,
-  Text,
-  VStack,
-} from "@chakra-ui/react";
+import { Container, Flex, Image, Stack, Text, VStack } from "@chakra-ui/react";
 
 export const AboutUs = () => {
   return (

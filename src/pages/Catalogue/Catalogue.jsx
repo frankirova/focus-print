@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { authContext, ProductContext } from "../../context";
 import { ProductsList } from "../Catalogue";
 import { H2, CartWidget } from "../../components";
-import { Container, Flex, Spinner, Text } from "@chakra-ui/react";
+import { Container, Flex, Spinner } from "@chakra-ui/react";
 
 export const Catalogue = () => {
   const { isLoggedIn } = useContext(authContext);

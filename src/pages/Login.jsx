@@ -18,7 +18,7 @@ export const Login = () => {
     const error = await login(formState.email, formState.password);
 
     if (!error) {
-      navigate("/catalogo");
+      navigate("/Catalogo");
       setIsLoggedIn(true);
     }
   };
@@ -26,7 +26,7 @@ export const Login = () => {
     const error = await loginWhitGoogle();
 
     if (!error) {
-      navigate("/catalogo");
+      navigate("/Catalogo");
       setIsLoggedIn("true");
     }
   };
