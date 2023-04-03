@@ -33,8 +33,8 @@ function App() {
                   />
                   <Route path="Contacto" element={<Contact />} />
                   <Route path="Sobre nosotros" element={<AboutUs />} />
-                  <Route path="iniciar-sesion" element={<Login />} />
-                  <Route path="registrarse" element={<Signup />} />
+                  <Route path="/iniciar-sesion" element={<Login />} />
+                  <Route path="/registrarse" element={<Signup />} />
                 </Routes>
                 <Footer />
               </BrowserRouter>
