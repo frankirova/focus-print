@@ -72,7 +72,12 @@ export const NavBar = () => {
             />
           </HStack>
           <NavLinksList links={links} setDisplay={setDisplay} />
-          {!isLoggedIn && <NavButtonGroup />}
+          {!isLoggedIn && (
+            <>
+              <LogOut />
+              <NavButtonGroup />
+            </>
+          )}
         </Flex>
         <Flex gap={2}>
           <Flex display={["none", "none", "flex", "flex"]}>
