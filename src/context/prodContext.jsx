@@ -1,6 +1,6 @@
 import { createContext } from "react";
 import { useParams } from "react-router-dom";
-import { useGetProducts } from "../Hooks/useGetProducts";
+import { useGetProducts } from "../hooks";
 
 export const ProductContext = createContext({});
 
