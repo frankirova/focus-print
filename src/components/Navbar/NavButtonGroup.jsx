@@ -5,7 +5,7 @@ export const NavButtonGroup = ({ setDisplay }) => {
     <Flex gap={3} justify="space-between">
       <Button
         as={NavLink}
-        to="/iniciar-sesion"
+        to="/login"
         variant="outline"
         fontSize={["sm", "sm", "lg", "xl"]}
         fontWeight="500"
@@ -17,7 +17,7 @@ export const NavButtonGroup = ({ setDisplay }) => {
       </Button>
       <Button
         as={NavLink}
-        to="/registrarse"
+        to="/signup"
         variant="outline"
         fontSize={["sm", "sm", "lg", "xl"]}
         fontWeight="500"
