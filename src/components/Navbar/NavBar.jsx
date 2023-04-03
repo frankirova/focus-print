@@ -2,15 +2,7 @@ import { useContext, useState } from "react";
 import { NavLink } from "react-router-dom";
 import { authContext } from "../../context/authContext";
 
-import {
-  Button,
-  Flex,
-  HStack,
-  IconButton,
-  Image,
-  Text,
-  useDisclosure,
-} from "@chakra-ui/react";
+import { Flex, HStack, IconButton, Image, Text } from "@chakra-ui/react";
 import { LogOut, NavButtonGroup, NavLinksList } from "..";
 
 import "../../styles/__navbar.css";
@@ -54,7 +46,7 @@ export const NavBar = () => {
           gap="1.4rem"
           display={["none", "none", "flex", "flex"]}
         >
-          <NavLinksList links={links} />
+          <NavLinksList links={links} setDisplay={setDisplay} />
         </Flex>
         <Flex
           gap={3}
@@ -79,7 +71,7 @@ export const NavBar = () => {
               onClick={() => setDisplay("none")}
             />
           </HStack>
-          <NavLinksList links={links} />
+          <NavLinksList links={links} setDisplay={setDisplay} />
           {!isLoggedIn && <NavButtonGroup />}
         </Flex>
         <Flex gap={2}>

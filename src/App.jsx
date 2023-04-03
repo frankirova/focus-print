@@ -26,13 +26,13 @@ function App() {
                 <NavBar />
                 <Routes>
                   <Route path="/" element={<Home />} />
-                  <Route path="/catalogo" element={<Catalogue />} />
+                  <Route path="/Catalogo" element={<Catalogue />} />
                   <Route
-                    path="/catalogo/prod/:prodId"
+                    path="/Catalogo/prod/:prodId"
                     element={<DetailProductContainer />}
                   />
-                  <Route path="/contacto" element={<Contact />} />
-                  <Route path="/sobre Nosotros" element={<AboutUs />} />
+                  <Route path="/Contacto" element={<Contact />} />
+                  <Route path="/Sobre nosotros" element={<AboutUs />} />
                   <Route path="/iniciar-sesion" element={<Login />} />
                   <Route path="/registrarse" element={<Signup />} />
                 </Routes>

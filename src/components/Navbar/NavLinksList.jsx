@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom";
 import { Button } from "@chakra-ui/react";
 
-export const NavLinksList = ({ links }) => {
+export const NavLinksList = ({ links, setDisplay }) => {
   return (
     <>
       {links.map((navDate) => (
