@@ -35,6 +35,8 @@ export const Contact = () => {
       maxW="full"
       mt={0}
       centerContent
+      placeContent="center"
+      placeItems="center"
       overflow="hidden"
       minH="80vh"
     >
@@ -56,11 +58,12 @@ export const Contact = () => {
                   </Text>
                   <Box py={{ base: 5, sm: 5, md: 8, lg: 10 }}>
                     {contactDate.map((contactDate) => (
-                      <VStack
+                      <Flex
                         key={contactDate}
                         pl={0}
                         spacing={3}
                         alignItems="flex-start"
+                        justifyContent="center"
                       >
                         <Button
                           textAlign="start"
@@ -87,7 +90,7 @@ export const Contact = () => {
                         >
                           {contactDate.email}
                         </Button>
-                      </VStack>
+                      </Flex>
                     ))}
                   </Box>
                 </Flex>

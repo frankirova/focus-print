@@ -6,7 +6,6 @@ export const NavButtonGroup = ({ setDisplay }) => {
       <Button
         as={NavLink}
         to="/iniciar-sesion"
-        // size={["sm", "sm", "sm", "md"]}
         variant="outline"
         fontSize={["sm", "sm", "lg", "xl"]}
         fontWeight="500"
@@ -19,7 +18,6 @@ export const NavButtonGroup = ({ setDisplay }) => {
       <Button
         as={NavLink}
         to="/registrarse"
-        // size={["sm", "sm", "sm", "md"]}
         variant="outline"
         fontSize={["sm", "sm", "lg", "xl"]}
         fontWeight="500"
