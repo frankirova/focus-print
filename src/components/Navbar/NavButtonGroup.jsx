@@ -11,7 +11,7 @@ export const NavButtonGroup = ({ setDisplay }) => {
         fontWeight="500"
         bg="primary"
         color="white"
-        onClick={() => setDisplay("none")}
+        // onClick={() => setDisplay("none")}
       >
         Iniciar sesion
       </Button>
@@ -23,7 +23,7 @@ export const NavButtonGroup = ({ setDisplay }) => {
         fontWeight="500"
         bg="primary"
         color="white"
-        onClick={() => setDisplay("none")}
+        // onClick={() => setDisplay("none")}
       >
         Registrarse
       </Button>
