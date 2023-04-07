@@ -6,11 +6,9 @@ export const NavButtonGroup = ({ setDisplay }) => {
       <Button
         as={NavLink}
         to="/login"
-        variant="outline"
         fontSize={["sm", "sm", "lg", "xl"]}
         fontWeight="500"
-        bg="primary"
-        color="white"
+        colorScheme="black"
         // onClick={() => setDisplay("none")}
       >
         Iniciar sesion
@@ -18,11 +16,9 @@ export const NavButtonGroup = ({ setDisplay }) => {
       <Button
         as={NavLink}
         to="/signup"
-        variant="outline"
         fontSize={["sm", "sm", "lg", "xl"]}
         fontWeight="500"
-        bg="primary"
-        color="white"
+        colorScheme="black"
         // onClick={() => setDisplay("none")}
       >
         Registrarse

@@ -28,16 +28,7 @@ export const NavBar = () => {
         align="center"
       >
         <NavLink to="/">
-          {/* <Image src="//placehold.it/128x64" borderRadius="10px"></Image> */}
-          <Text
-            as="h2"
-            letterSpacing=".2rem"
-            fontWeight="bold"
-            fontSize="2rem"
-            color="white"
-          >
-            F<span>O</span>CUS PRINT
-          </Text>
+          <Image src="/assets/nav (1).jpg"></Image>
         </NavLink>
 
         <Flex
