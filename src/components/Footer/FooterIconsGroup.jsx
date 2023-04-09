@@ -15,7 +15,7 @@ export const FooterIconsGroup = () => {
         <i className="fa-brands fa-instagram icon-footer"></i>
       </Link>
       <Link href="https://www.instagram.com/focusprint2021/">
-        <i class="fa-brands fa-tiktok icon-footer"></i>
+        <i className="fa-brands fa-tiktok icon-footer"></i>
       </Link>
       <Link href="https://api.whatsapp.com/send?phone=543512274743&text=Hola,%20tengo%20una%20consulta">
         <i className="fa-brands fa-whatsapp icon-footer"></i>

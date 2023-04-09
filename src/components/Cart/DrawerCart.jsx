@@ -26,13 +26,15 @@ import {
 } from "@chakra-ui/react";
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { PreviewOrder } from "./PreviewOrder";
+import { BackButton } from "./BackButton";
 
 export const DrawerCart = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const btnRef = useRef();
-  
   const { cart, checkout, getTotal, clearCart, getQuantity } =
-  useContext(CartContext);
+    useContext(CartContext);
+
   const total = getTotal();
   const totalQuantity = getQuantity();
 
@@ -100,41 +102,28 @@ export const DrawerCart = () => {
           <DrawerCloseButton />
           <DrawerHeader display="flex" gap={4} alignItems="center">
             {currentStep === "fields" && (
-              <FontAwesomeIcon
-                aria-label="Go back"
-                icon={faArrowLeft}
-                size="lg"
-                fontSize={["sm", "sm", "lg", "lg"]}
-                fontWeight="500"
-                onClick={() => setCurrentStep("cart")}
-              />
+              <BackButton setCurrentStep={setCurrentStep} />
             )}
             {currentStep === "finish" && (
-              <FontAwesomeIcon
-                aria-label="Go back"
-                icon={faArrowLeft}
-                size="lg"
-                fontSize={["sm", "sm", "lg", "lg"]}
-                fontWeight="500"
-                onClick={() => setCurrentStep("cart")}
-              />
+              <BackButton setCurrentStep={setCurrentStep} />
             )}
             Mi carrito
           </DrawerHeader>
           <MyDivider />
           <DrawerBody>
-            {isLoading && <Spinner />}
+            {isLoading && (
+              <Flex alignItems="center" justifyContent="center">
+                <Spinner />
+              </Flex>
+            )}
+
             {currentStep === "cart" && <CartList cart={cart} />}
+
             {currentStep === "fields" && (
               <Checkout setCurrentStep={setCurrentStep} onClose={onClose} />
             )}
-            {currentStep === "finish" && (
-              <VStack fontSize="xl">
-                <Text>Email: {checkout.email} </Text>
-                <Text>Direccion: {checkout.direction}</Text>
-                <Text> Metodo de Pago: {checkout.formaDePago}</Text>
-              </VStack>
-            )}
+
+            {currentStep === "finish" && <PreviewOrder checkout={checkout} />}
           </DrawerBody>
 
           <Flex justify="space-around" fontWeight="bold">
@@ -182,6 +171,7 @@ export const DrawerCart = () => {
                 fontWeight="500"
                 _hover={{ color: "white" }}
                 onClick={handleCreateOrder}
+                // disabled={hasError}
               >
                 Crear orden
               </Button>

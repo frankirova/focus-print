@@ -1,5 +1,4 @@
 export const useGetMessageCart = (cart, total, checkout) => {
-  // const message = []
   const items =
     Array.from(cart.values())
       .map((item) => `* ${item.title} - X ${item.quantity} - $${item.price}`)

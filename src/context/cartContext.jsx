@@ -52,11 +52,7 @@ export const CartProvider = ({ children }) => {
     notifyClearCart();
   };
 
-  const [checkout, setCheckout] = useState({
-    email: "",
-    direction: "",
-    formaDePago: "",
-  });
+  const [checkout, setCheckout] = useState({});
 
   const updateCheckout = (formState) => {
     setCheckout(formState);

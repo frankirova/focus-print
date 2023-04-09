@@ -95,14 +95,14 @@ export const CardProducts = ({ id, image, price, title, stock }) => {
                 fontSize={["sm", "sm", "lg", "lg"]}
                 fontWeight="500"
                 as={Link}
-                to="iniciar-sesion"
+                to="/login"
                 _hover={{ color: "primary", bg: "secondary" }}
               >
                 Agregar al carrito
               </Button>
               <Button
                 as={Link}
-                to="iniciar-sesion"
+                to="/login"
                 fontSize={["sm", "sm", "lg", "lg"]}
                 fontWeight="500"
                 variant="ghost"

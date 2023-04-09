@@ -39,7 +39,6 @@ export const CreateOrder = async (
       items: cart,
       total: total,
     };
-    console.log(checkout);
     const batch = writeBatch(db);
     const prodOfStock = [];
 
@@ -64,7 +63,7 @@ export const CreateOrder = async (
       }
     });
 
-    if (prodOfStock.length === 0) {
+    if (prodOfStock.length === 0 ) {
       await batch.commit();
       addOrder(order);
       setCurrentStep("finish");

@@ -1,7 +1,8 @@
 import { useState } from "react";
 
-export const useForm = (initialValue = {}) => {
+export const useForm = (initialValue = {}, validateForm) => {
   const [formState, setFormState] = useState(initialValue);
+  const [hasError, setHasError] = useState({});
 
   const handleChange = ({ target: { name, value } }) => {
     setFormState({
@@ -9,8 +10,16 @@ export const useForm = (initialValue = {}) => {
       [name]: value,
     });
   };
+  const handleBlur = (e) => {
+    handleChange(e);
+    setHasError(validateForm(formState));
+  };
   const handleSubmit = (e) => {
     e.preventDefault();
+    setHasError(validateForm(formState));
+    if (Object.keys(hasError).length === 0){
+      alert('enviando formulario')
+    }
   };
 
   const handleReset = () => {
@@ -27,5 +36,7 @@ export const useForm = (initialValue = {}) => {
     handleSubmit,
     handleReset,
     updateFormState,
+    hasError,
+    handleBlur,
   };
 };
