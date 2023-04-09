@@ -27,6 +27,7 @@ function App() {
                 <Routes>
                   <Route path="/" element={<Home />} />
                   <Route path="/Catalogo" element={<Catalogue />} />
+                  
                   <Route
                     path="/Catalogo/prod/:prodId"
                     element={<DetailProductContainer />}

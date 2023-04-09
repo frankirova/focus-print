@@ -12,6 +12,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 // import { useGetNavDates } from "../hooks";
 
 export const NavBar = () => {
+
   const links = ["Catalogo", "Contacto", "Sobre nosotros"];
   // const { navDate, isLoading } = useGetNavDates();
   const [display, setDisplay] = useState("none");

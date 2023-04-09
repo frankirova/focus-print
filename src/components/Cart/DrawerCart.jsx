@@ -43,6 +43,15 @@ export const DrawerCart = () => {
   const [isLoading, setIsLoading] = useState(false);
 
   const handleCreateOrder = () => {
+    if (checkout.email === "") {
+      return;
+    }
+    if (checkout.direction === "") {
+      return;
+    }
+    if (checkout.formaDePago === "") {
+      return;
+    }
     CreateOrder(cart, checkout, total, setCurrentStep, setIsLoading);
   };
 

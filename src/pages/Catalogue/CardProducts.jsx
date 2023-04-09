@@ -50,6 +50,8 @@ export const CardProducts = ({ id, image, price, title, stock }) => {
             <Heading size="lg" fontFamily="big_noodle" fontWeight="500">
               {title}
             </Heading>
+            <Text>Stock:{stock}</Text>
+
             <HStack>
               <Text color="primary" fontSize="3xl">
                 ${price}
