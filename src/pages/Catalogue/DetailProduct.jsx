@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { NavLink } from "react-router-dom";
-import { CartContext } from "../../context/cartContext";
-import { CounterQuantity } from "../../components/Cart";
+import { CartContext } from "../../context";
+import { CounterQuantity } from "../../components";
 
 import {
   Card,
@@ -25,6 +25,7 @@ export const DetailProduct = ({ prodFilterById }) => {
   const addTo = (quantity) => {
     addToCart({ id, image, price, title, stock, quantity });
   };
+
   return (
     <Container as="article" align="center" justify="center" minH="85vh">
       <Card size="lg" justifyContent="center">

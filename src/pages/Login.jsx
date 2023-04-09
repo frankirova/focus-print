@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { authContext } from "../context";
 import { useForm } from "../hooks";
 import { MyDivider } from "../components";
+
 import { Input, Flex, Heading, Button, Box, Text } from "@chakra-ui/react";
 
 export const Login = () => {
@@ -30,6 +31,7 @@ export const Login = () => {
       setIsLoggedIn("true");
     }
   };
+
   return (
     <Flex height="80vh" alignItems="center" justifyContent="center">
       <Flex

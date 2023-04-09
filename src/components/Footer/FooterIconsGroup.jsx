@@ -6,7 +6,6 @@ export const FooterIconsGroup = () => {
     <Flex
       justify="center"
       textAlign="center"
-      // bg="#D1E9B7"
       w="18rem"
       p={3}
       borderRadius="25px"

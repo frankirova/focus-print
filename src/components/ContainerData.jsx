@@ -1,4 +1,5 @@
 import { Container, Flex, Heading, Text } from "@chakra-ui/react";
+
 export const ContainerData = ({ title, text }) => {
   return (
     <div>

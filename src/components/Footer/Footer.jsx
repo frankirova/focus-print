@@ -1,7 +1,7 @@
 import { FooterIconsGroup } from "./FooterIconsGroup";
 import { Flex } from "@chakra-ui/react";
 
-import "../../styles/__footer.css";
+import "./__footer.css";
 
 export const Footer = () => {
   return (

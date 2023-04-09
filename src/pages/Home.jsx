@@ -7,13 +7,9 @@ export const Home = () => {
         <Image
           w="full"
           h="80vh"
-          // objectFit="cover"
-          // src="assets/cubos.png"
-          // src="//placehold.it/1280x500"
-          // src='assets/focus-fondo-home.jpg'
+          objectFit="cover"
           src="assets/homefocus.jpg"
-
-          alt="cubos"
+          alt="logo-focus-print"
         />
       </Box>
     </>

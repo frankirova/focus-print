@@ -7,7 +7,7 @@ export const ProductContext = createContext({});
 export const ProductProvider = ({ children }) => {
   const { categoryId } = useParams();
   const { products, isLoading } = useGetProducts(categoryId);
-  
+
   return (
     <ProductContext.Provider
       value={{

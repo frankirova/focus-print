@@ -11,23 +11,7 @@ export const Checkout = () => {
     direction: "",
     formaDePago: "",
   };
-  const validateForm = (formState) => {
-    let hasError = {};
-    const regexEmail = /^(\w+[/./-]?){1,}@[a-z]+[/.]\w{2,}$/;
 
-    if (!formState.email.trim()) {
-      hasError.email = "El campo email es requerido";
-    } else if (!regexEmail.test(formState.email.trim())) {
-      hasError.email = "Formato incorrecto";
-    }
-    if (!formState.direction.trim()) {
-      hasError.direction = "La direccion es requerida";
-    }
-    if (!formState.formaDePago.trim()) {
-      hasError.formaDePago = "El metodo de pago es requerido";
-    }
-    return hasError;
-  };
   const {
     formState,
     handleChange,
@@ -35,7 +19,7 @@ export const Checkout = () => {
     updateFormState,
     hasError,
     handleBlur,
-  } = useForm(initialValue, validateForm);
+  } = useForm(initialValue);
 
   useEffect(() => {
     updateCheckout(formState);

@@ -1,5 +1,6 @@
-import { Box, Center, SimpleGrid } from "@chakra-ui/react";
 import { CardProducts } from "../Catalogue";
+
+import { Box, Center, SimpleGrid } from "@chakra-ui/react";
 
 export const ProductsList = ({ products }) => {
   return (

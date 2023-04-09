@@ -21,7 +21,7 @@ export const CardProducts = ({ id, image, price, title, stock }) => {
   const { addToCart, isInCart } = useContext(CartContext);
   const { isLoggedIn } = useContext(authContext);
 
-  const notificationErrorSock = () => {
+  const notificationErrorStock = () => {
     toast.error("Error, agregaste un producto sin Stock al CARRITO!");
   };
 
@@ -35,8 +35,12 @@ export const CardProducts = ({ id, image, price, title, stock }) => {
     if (stock !== 0) {
       addToCart({ id, image, price, title, quantity });
     } else {
-      notificationErrorSock();
+      notificationErrorStock();
     }
+    // if (isInCart) {
+    //   notifyProductInCart();
+    //   return;
+    // }
   };
 
   return (
@@ -51,7 +55,6 @@ export const CardProducts = ({ id, image, price, title, stock }) => {
               {title}
             </Heading>
             <Text>Stock:{stock}</Text>
-
             <HStack>
               <Text color="primary" fontSize="3xl">
                 ${price}

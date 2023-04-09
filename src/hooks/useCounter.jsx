@@ -1,7 +1,5 @@
-import { useContext, useState } from "react";
-import { ProductContext } from "../context/prodContext";
+import { useState } from "react";
 export const useCounter = (stock) => {
-  const { products } = useContext(ProductContext);
   const [counter, setCounter] = useState(1);
 
   const increment = () => {

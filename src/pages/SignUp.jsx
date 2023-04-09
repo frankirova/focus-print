@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { authContext } from "../context";
 import { useForm } from "../hooks";
+
 import {
   Heading,
   Input,
@@ -26,6 +27,7 @@ export const Signup = () => {
       setIsLoggedIn(true);
     }
   };
+  
   return (
     <Flex minH="80vh" alignItems="center" justifyContent="center">
       <Flex

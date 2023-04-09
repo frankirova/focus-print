@@ -1,4 +1,5 @@
 import { useGetContactDates } from "../hooks";
+
 import {
   Container,
   Flex,
@@ -29,6 +30,7 @@ export const Contact = () => {
         <Spinner size="xl" color="green" />
       </Flex>
     );
+
   return (
     <Container
       bg="#fff"

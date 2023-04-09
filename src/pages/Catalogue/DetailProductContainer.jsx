@@ -1,8 +1,9 @@
 import { useContext } from "react";
 import { useParams } from "react-router-dom";
-import { ProductContext } from "../../context/prodContext";
+import { ProductContext } from "../../context";
 import { DetailProduct } from "../Catalogue";
-import { H2, CartWidget } from "../../components";
+import { H2, DrawerCart } from "../../components";
+
 import { Box, Container, Spinner } from "@chakra-ui/react";
 import { Toaster } from "react-hot-toast";
 
@@ -21,7 +22,7 @@ export const DetailProductContainer = () => {
       <H2>Detalle</H2>
       <Box as="section">
         <DetailProduct prodFilterById={productsFilterById[0]} />
-        <CartWidget />
+        <DrawerCart />
       </Box>
       <Toaster position="top-center" reverseOrder={false} />
     </Container>

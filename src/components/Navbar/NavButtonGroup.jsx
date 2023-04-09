@@ -1,5 +1,6 @@
 import { NavLink } from "react-router-dom";
 import { Button, Flex } from "@chakra-ui/react";
+
 export const NavButtonGroup = ({ setDisplay }) => {
   return (
     <Flex gap={3} justify="space-between">
@@ -9,7 +10,7 @@ export const NavButtonGroup = ({ setDisplay }) => {
         fontSize={["sm", "sm", "lg", "xl"]}
         fontWeight="500"
         colorScheme="black"
-        // onClick={() => setDisplay("none")}
+        onClick={() => setDisplay("none")}
       >
         Iniciar sesion
       </Button>
@@ -19,7 +20,7 @@ export const NavButtonGroup = ({ setDisplay }) => {
         fontSize={["sm", "sm", "lg", "xl"]}
         fontWeight="500"
         colorScheme="black"
-        // onClick={() => setDisplay("none")}
+        onClick={() => setDisplay("none")}
       >
         Registrarse
       </Button>

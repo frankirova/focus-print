@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { CartContext } from "../../context/cartContext";
+import { CartContext } from "../../context";
 import { Box, Divider, Grid, GridItem, Image } from "@chakra-ui/react";
 
 export const CartList = ({ cart }) => {

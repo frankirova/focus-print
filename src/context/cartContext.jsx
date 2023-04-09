@@ -13,20 +13,12 @@ export const CartProvider = ({ children }) => {
     }
   };
 
-  const notifyAddedToCart = () => {
-    toast.success("Agregado al carrito!");
-  };
-  const notifyClearCart = () => {
-    toast.success("Carrito vacio!");
-  };
-
   const isInCart = (id) => {
     return cart.some((product) => product.id === id);
   };
 
   const getQuantity = () => {
     let acc = 0;
-
     cart.forEach((prod) => {
       acc += prod.quantity;
     });
@@ -56,6 +48,13 @@ export const CartProvider = ({ children }) => {
 
   const updateCheckout = (formState) => {
     setCheckout(formState);
+  };
+
+  const notifyAddedToCart = () => {
+    toast.success("Agregado al carrito!");
+  };
+  const notifyClearCart = () => {
+    toast.success("Carrito vacio!");
   };
 
   return (

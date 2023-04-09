@@ -180,7 +180,6 @@ export const DrawerCart = () => {
                 fontWeight="500"
                 _hover={{ color: "white" }}
                 onClick={handleCreateOrder}
-                // disabled={hasError}
               >
                 Crear orden
               </Button>

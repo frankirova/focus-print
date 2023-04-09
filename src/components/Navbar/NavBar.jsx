@@ -1,20 +1,15 @@
 import { useContext, useState } from "react";
 import { NavLink } from "react-router-dom";
-import { authContext } from "../../context/authContext";
+import { authContext } from "../../context";
+import { LogOut, NavButtonGroup, NavLinksList } from "../../components";
 
-import { Flex, HStack, IconButton, Image, Text } from "@chakra-ui/react";
-import { LogOut, NavButtonGroup, NavLinksList } from "..";
-
-import "../../styles/__navbar.css";
+import "./__navbar.css";
+import { Flex, HStack, IconButton, Image } from "@chakra-ui/react";
 import { faBars, faXmark } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-// import { useGetNavDates } from "../hooks";
-
 export const NavBar = () => {
-
   const links = ["Catalogo", "Contacto", "Sobre nosotros"];
-  // const { navDate, isLoading } = useGetNavDates();
   const [display, setDisplay] = useState("none");
 
   const { isLoggedIn } = useContext(authContext);
