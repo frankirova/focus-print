@@ -3,7 +3,7 @@ import { db } from "../firebase-config";
 
 export const getProducts = () => {
   return new Promise((resolve, reject) => {
-    const prodRef = query(collection(db, "products"), orderBy("price", "asc"));
+    const prodRef = query(collection(db, "products"), orderBy("price", "desc"));
 
     getDocs(prodRef)
       .then((response) => {
@@ -14,7 +14,7 @@ export const getProducts = () => {
         resolve(prodAdapted);
       })
       .catch((error) => {
-        console.log(error);
+        console.error(error);
         reject(error);
       });
   });
@@ -36,39 +36,3 @@ export const getContactDates = () => {
       });
   }, []);
 };
-
-// export const getNavDates = () => {
-//   return new Promise((resolve, reject) => {
-//     const navDateRef = collection(db, "navDate");
-//     getDocs(navDateRef)
-//       .then((response) => {
-//         const navDateAdapted = response.docs.map((doc) => {
-//           const data = doc.data();
-//           return {...data};
-//         });
-//         const datita = Array.from(navDateAdapted);
-//         resolve(datita);
-//       })
-//       .catch((error) => {
-//         reject(error);
-//       });
-//   });
-// };
-// export const getNavDates = () => {
-//   return new Promise((resolve, reject) => {
-//     const navDateRef = collection(db, "navDate");
-//     getDocs(navDateRef)
-//       .then((response) => {
-//         const navDateAdapted = response.docs.map((doc) => {
-//           const data = doc.data();
-//           // return { ...data };
-//           const stringData = JSON.stringify(data);
-//           return { ...JSON.parse(stringData) };
-//         });
-//         resolve(navDateAdapted);
-//       })
-//       .catch((error) => {
-//         reject(error);
-//       });
-//   });
-// };

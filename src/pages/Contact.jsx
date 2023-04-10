@@ -24,13 +24,6 @@ import { faEnvelope, faPhone } from "@fortawesome/free-solid-svg-icons";
 export const Contact = () => {
   const { isLoading, contactDate } = useGetContactDates();
 
-  if (isLoading)
-    return (
-      <Flex height="80vh" alignItems="center" justifyContent="center">
-        <Spinner size="xl" color="green" />
-      </Flex>
-    );
-
   return (
     <Container
       bg="#fff"
@@ -42,6 +35,11 @@ export const Contact = () => {
       overflow="hidden"
       minH="80vh"
     >
+      {isLoading && (
+        <Flex height="80vh" alignItems="center" justifyContent="center">
+          <Spinner size="xl" color="green" />
+        </Flex>
+      )}
       <Flex>
         <Box
           bg="rgba(236,242,246,255)"

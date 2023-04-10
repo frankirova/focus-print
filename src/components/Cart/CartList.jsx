@@ -4,6 +4,7 @@ import { Box, Divider, Grid, GridItem, Image } from "@chakra-ui/react";
 
 export const CartList = ({ cart }) => {
   const { removeItem } = useContext(CartContext);
+
   return (
     <>
       {cart.map((prod) => (

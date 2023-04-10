@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { useParams } from "react-router-dom";
 import { ProductContext } from "../../context";
+import { useFilterById } from "../../hooks";
 import { DetailProduct } from "../Catalogue";
 import { H2, DrawerCart } from "../../components";
 
@@ -11,14 +12,14 @@ export const DetailProductContainer = () => {
   const { prodId } = useParams();
   const { products, isLoading } = useContext(ProductContext);
 
-  const productsFilterById = products
-    .filter((prod) => prod.id === prodId)
-    .map((prod) => prod);
-
-  if (isLoading) return <Spinner />;
+  const { productsFilterById } = useFilterById({
+    products,
+    prodId,
+  });
 
   return (
     <Container maxW="1200px">
+      {isLoading && <Spinner />}
       <H2>Detalle</H2>
       <Box as="section">
         <DetailProduct prodFilterById={productsFilterById[0]} />

@@ -1,7 +1,9 @@
-import { useState } from "react";
+import { usePagination, useFilterByCategory } from "../../hooks";
 import { ProductsList } from "../Catalogue";
 
 import {
+  Button,
+  Flex,
   Heading,
   Tab,
   TabList,
@@ -11,15 +13,6 @@ import {
 } from "@chakra-ui/react";
 
 export const MyTabs = ({ products }) => {
-  const [filter, setFilter] = useState("");
-
-  const productsFilterByCategory = products
-    .filter((prod) => prod.category == filter)
-    .map((prod) => prod);
-
-  const handleChangeCategory = ({ target: { value } }) => {
-    setFilter(value);
-  };
   const categories = [
     "Todos",
     "Parafernalia",
@@ -28,6 +21,10 @@ export const MyTabs = ({ products }) => {
     "Repuestos",
     "Accesibilidad",
   ];
+  const { nextPage, prevPage, arr } = usePagination({ products });
+  const { productsFilterByCategory, handleChangeFilter } = useFilterByCategory({
+    products,
+  });
 
   return (
     <Tabs colorScheme="primary">
@@ -36,7 +33,7 @@ export const MyTabs = ({ products }) => {
           <Tab
             key={category}
             value={category.toLowerCase()}
-            onClick={handleChangeCategory}
+            onClick={handleChangeFilter}
           >
             {category}
           </Tab>
@@ -44,7 +41,31 @@ export const MyTabs = ({ products }) => {
       </TabList>
       <TabPanels p="2rem">
         <TabPanel>
-          <ProductsList products={products} />
+          <ProductsList products={arr} />
+          <Flex justify="space-evenly">
+            <Button
+              bg="primary"
+              color="white"
+              fontWeight="200"
+              size="md"
+              mt="1rem"
+              _hover={{ color: "primary", bg: "secondary" }}
+              onClick={prevPage}
+            >
+              Anterior
+            </Button>
+            <Button
+              bg="primary"
+              color="white"
+              fontWeight="200"
+              size="md"
+              mt="1rem"
+              _hover={{ color: "primary", bg: "secondary" }}
+              onClick={nextPage}
+            >
+              Siguiente
+            </Button>
+          </Flex>
         </TabPanel>
         {categories.slice(1, 4).map((category) => (
           <TabPanel key={category}>
@@ -52,11 +73,11 @@ export const MyTabs = ({ products }) => {
           </TabPanel>
         ))}
         <TabPanel>
-          <Heading>Repuestos</Heading>
+          <Heading fontFamily="big_noodle">Repuestos</Heading>
           <ProductsList products={productsFilterByCategory} />
         </TabPanel>
         <TabPanel>
-          <Heading>Accesibilidad</Heading>
+          <Heading fontFamily="big_noodle">Accesibilidad</Heading>
           <ProductsList products={productsFilterByCategory} />
         </TabPanel>
       </TabPanels>

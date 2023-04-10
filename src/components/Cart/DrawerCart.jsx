@@ -2,7 +2,7 @@ import { useContext, useEffect, useRef, useState } from "react";
 import { CartContext } from "../../context/cartContext";
 import { MyDivider, Checkout, CartList } from "..";
 import { useGetMessageCart } from "../../hooks";
-
+import { PreviewOrder, BackButton } from "../Cart";
 import { CreateOrder } from "../../services/firestore_db/orders_db";
 
 import {
@@ -24,22 +24,26 @@ import {
   Tag,
   VStack,
 } from "@chakra-ui/react";
-import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { PreviewOrder } from "./PreviewOrder";
-import { BackButton } from "./BackButton";
 
 export const DrawerCart = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
-  const btnRef = useRef();
-  const { cart, checkout, getTotal, clearCart, getQuantity } =
-    useContext(CartContext);
 
+  const btnRef = useRef();
+  
+  const { cart, checkout, getTotal, clearCart, getQuantity } =
+  useContext(CartContext);
   const total = getTotal();
   const totalQuantity = getQuantity();
+  
+  useEffect(() => {
+    if (!isOpen) {
+      () => setCurrentStep("cart");
+    }
+  }, [isOpen]);
+  
+  const { items } = useGetMessageCart(cart, total, checkout);
 
   const [currentStep, setCurrentStep] = useState("cart");
-
   const [isLoading, setIsLoading] = useState(false);
 
   const handleCreateOrder = () => {
@@ -55,13 +59,6 @@ export const DrawerCart = () => {
     CreateOrder(cart, checkout, total, setCurrentStep, setIsLoading);
   };
 
-  useEffect(() => {
-    if (!isOpen) {
-      () => setCurrentStep("cart");
-    }
-  }, [isOpen]);
-
-  const { items } = useGetMessageCart(cart, total, checkout);
 
   return (
     <>
@@ -111,9 +108,6 @@ export const DrawerCart = () => {
           <DrawerCloseButton />
           <DrawerHeader display="flex" gap={4} alignItems="center">
             {currentStep === "fields" && (
-              <BackButton setCurrentStep={setCurrentStep} />
-            )}
-            {currentStep === "finish" && (
               <BackButton setCurrentStep={setCurrentStep} />
             )}
             Mi carrito

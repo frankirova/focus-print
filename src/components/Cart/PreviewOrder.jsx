@@ -1,7 +1,6 @@
 import { VStack, Text } from "@chakra-ui/react";
 
 export const PreviewOrder = ({ checkout }) => {
-  console.log(checkout)
   return (
     <VStack fontSize="xl">
       <Text>Email: {checkout.email} </Text>

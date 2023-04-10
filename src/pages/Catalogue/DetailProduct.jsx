@@ -21,7 +21,9 @@ import {
 
 export const DetailProduct = ({ prodFilterById }) => {
   const { id, price, title, image, stock } = prodFilterById;
+
   const { isInCart, addToCart } = useContext(CartContext);
+
   const addTo = (quantity) => {
     addToCart({ id, image, price, title, stock, quantity });
   };
@@ -41,17 +43,14 @@ export const DetailProduct = ({ prodFilterById }) => {
             justify="center"
           >
             <Stack>
-              <figure>
-                <Image
-                  boxSize="240px"
-                  src={image}
-                  alt={title}
-                  objectFit="cover"
-                  borderRadius="lg"
-                />
-              </figure>
+              <Image
+                boxSize="240px"
+                src={image}
+                alt={title}
+                objectFit="cover"
+                borderRadius="lg"
+              />
             </Stack>
-
             <Stack mt="6" spacing="6" justifyContent="center">
               <Text></Text>
               <Text color="primary" fontSize="2xl" fontWeight="bold">

@@ -3,6 +3,7 @@ import { Button, Flex, Text } from "@chakra-ui/react";
 
 export const CounterQuantity = ({ prod, addTo }) => {
   const { counter, increment, decrement } = useCounter(prod.stock);
+
   return (
     <Flex as="section" direction="column" justify="center" align="center">
       <Flex gap={3} my="1rem" align="center">

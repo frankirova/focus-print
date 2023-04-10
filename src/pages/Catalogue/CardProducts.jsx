@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { authContext, CartContext } from "../../context";
+
 import {
   Card,
   Heading,

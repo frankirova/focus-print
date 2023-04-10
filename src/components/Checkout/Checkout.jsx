@@ -2,6 +2,7 @@ import { useContext, useEffect } from "react";
 import { CartContext } from "../../context";
 import { useForm } from "../../hooks";
 import { CheckoutCheckboxGroup, CheckoutInputGroup } from ".";
+
 import { Flex, FormControl, Text } from "@chakra-ui/react";
 
 export const Checkout = () => {
