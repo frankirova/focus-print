@@ -9,7 +9,9 @@ export const CartProvider = ({ children }) => {
   const addToCart = (prodToAdd) => {
     if (!isInCart(prodToAdd.id)) {
       setCart([...cart, prodToAdd]);
-      notifyAddedToCart();
+      toast.success("Agregado al carrito!");
+    } else {
+      toast.error("Error, ya agergaste este producto al carrito!");
     }
   };
 
@@ -41,20 +43,13 @@ export const CartProvider = ({ children }) => {
 
   const clearCart = () => {
     setCart([]);
-    notifyClearCart();
+    toast.success("Carrito vacio!");
   };
 
   const [checkout, setCheckout] = useState({});
 
   const updateCheckout = (formState) => {
     setCheckout(formState);
-  };
-
-  const notifyAddedToCart = () => {
-    toast.success("Agregado al carrito!");
-  };
-  const notifyClearCart = () => {
-    toast.success("Carrito vacio!");
   };
 
   return (

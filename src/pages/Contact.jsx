@@ -1,4 +1,4 @@
-import { useGetContactDates } from "../hooks";
+import { useForm, useGetContactDates } from "../hooks";
 
 import {
   Container,
@@ -20,10 +20,14 @@ import {
 } from "@chakra-ui/react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope, faPhone } from "@fortawesome/free-solid-svg-icons";
+import { useGetMessageContact } from "../hooks/useGetMessageContact";
+import { Link, NavLink } from "react-router-dom";
 
 export const Contact = () => {
   const { isLoading, contactDate } = useGetContactDates();
-
+  const { formState, handleSubmit, handleChange } = useForm();
+  const { message } = useGetMessageContact(formState);
+  console.log(message);
   return (
     <Container
       bg="#fff"
@@ -105,18 +109,22 @@ export const Contact = () => {
                           <InputLeftElement pointerEvents="none" />
                           <Input
                             type="text"
+                            name="name"
                             size="md"
+                            onChange={handleChange}
                             focusBorderColor="primary"
                           />
                         </InputGroup>
                       </FormControl>
                       <FormControl id="name">
-                        <FormLabel>Mail</FormLabel>
+                        <FormLabel>Email</FormLabel>
                         <InputGroup borderColor="#E0E1E7">
                           <InputLeftElement pointerEvents="none" />
                           <Input
                             type="text"
+                            name="email"
                             size="md"
+                            onChange={handleChange}
                             focusBorderColor="primary"
                           />
                         </InputGroup>
@@ -129,20 +137,25 @@ export const Contact = () => {
                           _hover={{
                             borderRadius: "gray.300",
                           }}
+                          onChange={handleChange}
+                          name="message"
                           placeholder="Mensaje..."
                         />
                       </FormControl>
-                      <FormControl id="name" float="right">
-                        <Button
-                          variant="solid"
-                          fontWeight="500"
-                          bg="primary"
-                          color="white"
-                          _hover={{}}
-                        >
-                          Enviar mensaje
-                        </Button>
-                      </FormControl>
+                      <FormControl id="name" float="right"></FormControl>
+                      <Button
+                        variant="solid"
+                        as="a"
+                        href={`https://wa.me/543512274743?text=${encodeURIComponent(
+                          message
+                        )}`}
+                        fontWeight="500"
+                        bg="primary"
+                        color="white"
+                        _hover={{}}
+                      >
+                        Enviar mensaje
+                      </Button>
                     </VStack>
                   </Box>
                 </Box>

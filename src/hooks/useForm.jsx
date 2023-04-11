@@ -8,15 +8,15 @@ export const useForm = (initialValue = {}) => {
     let hasError = {};
     const regexEmail = /^(\w+[/./-]?){1,}@[a-z]+[/.]\w{2,}$/;
 
-    if (!formState.email.trim()) {
+    if (!formState.email) {
       hasError.email = "El campo email es requerido";
     } else if (!regexEmail.test(formState.email.trim())) {
       hasError.email = "Formato incorrecto";
     }
-    if (!formState.direction.trim()) {
+    if (!formState.direction) {
       hasError.direction = "La direccion es requerida";
     }
-    if (!formState.formaDePago.trim()) {
+    if (!formState.formaDePago) {
       hasError.formaDePago = "El metodo de pago es requerido";
     }
     return hasError;

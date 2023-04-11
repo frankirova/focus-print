@@ -29,36 +29,33 @@ export const DrawerCart = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   const btnRef = useRef();
-  
+
   const { cart, checkout, getTotal, clearCart, getQuantity } =
-  useContext(CartContext);
+    useContext(CartContext);
   const total = getTotal();
   const totalQuantity = getQuantity();
-  
+
   useEffect(() => {
     if (!isOpen) {
       () => setCurrentStep("cart");
     }
   }, [isOpen]);
-  
+
   const { items } = useGetMessageCart(cart, total, checkout);
 
   const [currentStep, setCurrentStep] = useState("cart");
   const [isLoading, setIsLoading] = useState(false);
 
   const handleCreateOrder = () => {
-    if (checkout.email === "") {
+    if (
+      checkout.email === "" ||
+      checkout.direction === "" ||
+      checkout.formaDePago === ""
+    )
       return;
-    }
-    if (checkout.direction === "") {
-      return;
-    }
-    if (checkout.formaDePago === "") {
-      return;
-    }
+
     CreateOrder(cart, checkout, total, setCurrentStep, setIsLoading);
   };
-
 
   return (
     <>

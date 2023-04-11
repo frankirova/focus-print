@@ -19,16 +19,8 @@ import {
 import { toast, Toaster } from "react-hot-toast";
 
 export const CardProducts = ({ id, image, price, title, stock }) => {
-  const { addToCart, isInCart } = useContext(CartContext);
+  const { addToCart } = useContext(CartContext);
   const { isLoggedIn } = useContext(authContext);
-
-  const notificationErrorStock = () => {
-    toast.error("Error, agregaste un producto sin Stock al CARRITO!");
-  };
-
-  const notifyProductInCart = () => {
-    toast.error("Error, ya agergaste este producto al carrito!");
-  };
 
   const quantity = 1;
 
@@ -36,12 +28,8 @@ export const CardProducts = ({ id, image, price, title, stock }) => {
     if (stock !== 0) {
       addToCart({ id, image, price, title, quantity });
     } else {
-      notificationErrorStock();
+      toast.error("Error, agregaste un producto sin Stock al CARRITO!");
     }
-    // if (isInCart) {
-    //   notifyProductInCart();
-    //   return;
-    // }
   };
 
   return (
