@@ -10,7 +10,7 @@ export const NavButtonGroup = ({ setDisplay }) => {
         fontSize={["sm", "sm", "lg", "xl"]}
         fontWeight="500"
         colorScheme="black"
-        onClick={() => setDisplay("none")}
+        // onClick={() => setDisplay("none")}
       >
         Iniciar sesion
       </Button>
@@ -20,7 +20,7 @@ export const NavButtonGroup = ({ setDisplay }) => {
         fontSize={["sm", "sm", "lg", "xl"]}
         fontWeight="500"
         colorScheme="black"
-        onClick={() => setDisplay("none")}
+        // onClick={() => setDisplay("none")}
       >
         Registrarse
       </Button>
