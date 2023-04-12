@@ -23,7 +23,7 @@ export const Footer = () => {
             justify="center"
             gap={2}
             as="a"
-            my={[2, 2, 0, 0]}
+            my={[3, 3, 0, 0]}
             href="https://github.com/frankirova"
           >
             <Text fontSize="md" fontWeight="600" color="gray">
