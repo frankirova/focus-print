@@ -11,7 +11,11 @@ import {
   TabPanels,
   Tabs,
 } from "@chakra-ui/react";
-
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faCircleArrowLeft,
+  faCircleArrowRight,
+} from "@fortawesome/free-solid-svg-icons";
 export const MyTabs = ({ products }) => {
   const categories = [
     "Todos",
@@ -42,28 +46,35 @@ export const MyTabs = ({ products }) => {
       <TabPanels p="2rem">
         <TabPanel>
           <ProductsList products={arr} />
-          <Flex justify="space-evenly">
+          <Flex justify="space-around">
             <Button
+              display="flex"
+              gap={2}
               bg="primary"
               color="white"
               fontWeight="200"
-              size="md"
+              size="lg"
               mt="1rem"
               _hover={{ color: "primary", bg: "secondary" }}
               onClick={prevPage}
             >
+              <FontAwesomeIcon icon={faCircleArrowLeft} />
               Anterior
             </Button>
+
             <Button
+              display="flex"
+              gap={2}
               bg="primary"
               color="white"
               fontWeight="200"
-              size="md"
+              size="lg"
               mt="1rem"
               _hover={{ color: "primary", bg: "secondary" }}
               onClick={nextPage}
             >
               Siguiente
+              <FontAwesomeIcon icon={faCircleArrowRight} />
             </Button>
           </Flex>
         </TabPanel>

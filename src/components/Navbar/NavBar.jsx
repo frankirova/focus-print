@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 import { authContext } from "../../context";
 import { LogOut, NavButtonGroup, NavLinksList } from "../../components";
 
-import "./__navbar.css";
+import "../../styles/__navbar.css";
 import { Flex, HStack, IconButton, Image } from "@chakra-ui/react";
 import { faBars, faXmark } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
