@@ -17,7 +17,7 @@ import {
   Tabs,
 } from "@chakra-ui/react";
 
-export const MyTabs = ({ products }) => {
+export default function MyTabs({ products }) {
   const categories = [
     "Todos",
     "Parafernalia",
@@ -95,4 +95,4 @@ export const MyTabs = ({ products }) => {
       </TabPanels>
     </Tabs>
   );
-};
+}
