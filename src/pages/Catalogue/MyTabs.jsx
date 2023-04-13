@@ -1,6 +1,11 @@
 import { usePagination, useFilterByCategory } from "../../hooks";
 import { ProductsList } from "../Catalogue";
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faCircleArrowLeft,
+  faCircleArrowRight,
+} from "@fortawesome/free-solid-svg-icons";
 import {
   Button,
   Flex,
@@ -11,11 +16,7 @@ import {
   TabPanels,
   Tabs,
 } from "@chakra-ui/react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faCircleArrowLeft,
-  faCircleArrowRight,
-} from "@fortawesome/free-solid-svg-icons";
+
 export const MyTabs = ({ products }) => {
   const categories = [
     "Todos",

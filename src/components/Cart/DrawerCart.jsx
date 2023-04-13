@@ -1,9 +1,9 @@
 import { useContext, useEffect, useRef, useState } from "react";
-import { CartContext } from "../../context/cartContext";
-import { MyDivider, Checkout, CartList } from "..";
+import { CartContext } from "../../context";
 import { useGetMessageCart } from "../../hooks";
-import { PreviewOrder, BackButton } from "../Cart";
-import { CreateOrder } from "../../services/firestore_db/orders_db";
+import { createOrder } from "../../services/firestore_db/orders_db";
+import { Checkout } from "../Checkout";
+import { MyDivider, CartList, PreviewOrder, BackButton } from "../Cart";
 
 import {
   Box,
@@ -26,14 +26,15 @@ import {
 } from "@chakra-ui/react";
 
 export const DrawerCart = () => {
-  const { isOpen, onOpen, onClose } = useDisclosure();
-
-  const btnRef = useRef();
-
   const { cart, checkout, getTotal, clearCart, getQuantity } =
     useContext(CartContext);
   const total = getTotal();
-  const totalQuantity = getQuantity();
+
+  const [currentStep, setCurrentStep] = useState("cart");
+  const [isLoading, setIsLoading] = useState(false);
+  const { isOpen, onOpen, onClose } = useDisclosure();
+  const { items } = useGetMessageCart(cart, total, checkout);
+  const btnRef = useRef();
 
   useEffect(() => {
     if (!isOpen) {
@@ -41,20 +42,11 @@ export const DrawerCart = () => {
     }
   }, [isOpen]);
 
-  const { items } = useGetMessageCart(cart, total, checkout);
-
-  const [currentStep, setCurrentStep] = useState("cart");
-  const [isLoading, setIsLoading] = useState(false);
-
   const handleCreateOrder = () => {
-    if (
-      checkout.email === "" ||
-      checkout.direction === "" ||
-      checkout.formaDePago === ""
-    )
-      return;
-
-    CreateOrder(cart, checkout, total, setCurrentStep, setIsLoading);
+    if (checkout.email === "") return;
+    if (checkout.direction === "") return;
+    if (checkout.formaDePago === "") return;
+    createOrder(cart, checkout, total, setCurrentStep, setIsLoading);
   };
 
   return (
@@ -87,7 +79,7 @@ export const DrawerCart = () => {
               py={1}
               px={2}
             >
-              Items: {totalQuantity}
+              Items: {getQuantity()}
             </Tag>
           </Flex>
         </Button>

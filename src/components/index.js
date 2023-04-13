@@ -4,5 +4,4 @@ export * from './ContainerData';
 export * from './Footer/Footer';
 export * from './Footer/FooterIconsGroup';
 export * from './H2';
-export * from './MyDivider';
 export * from './Navbar';

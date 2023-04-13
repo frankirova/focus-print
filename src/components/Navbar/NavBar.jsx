@@ -24,7 +24,7 @@ export const NavBar = () => {
         align="center"
       >
         <NavLink to="/">
-          <Image src="/assets/nav (1).jpg"></Image>
+          <Image src="/assets/nav (1).jpg" alt="logo-focus"></Image>
         </NavLink>
 
         <Flex

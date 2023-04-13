@@ -23,7 +23,7 @@ export const addOrder = (order) => {
   const orderAdded = addDoc(orderRef, order);
 };
 
-export const CreateOrder = async (
+export const createOrder = async (
   cart,
   checkout,
   total,
@@ -39,7 +39,9 @@ export const CreateOrder = async (
       items: cart,
       total: total,
     };
+
     const batch = writeBatch(db);
+
     const prodOfStock = [];
 
     const idProdAddedToCart = cart.map((prod) => prod.id);
@@ -47,6 +49,7 @@ export const CreateOrder = async (
     const prodAddedToCartFromFirestore = await getProductsAddedToCart(
       idProdAddedToCart
     );
+
     const { docs } = prodAddedToCartFromFirestore;
 
     docs.forEach((doc) => {
@@ -63,15 +66,13 @@ export const CreateOrder = async (
       }
     });
 
-    if (prodOfStock.length === 0 ) {
+    if (prodOfStock.length === 0) {
       await batch.commit();
       addOrder(order);
       setCurrentStep("finish");
-      // notifyCreateOrderSuccess();
     }
   } catch (error) {
     console.error(error);
-    // notifyErrorCreateOrder();
   } finally {
     setIsLoading(false);
   }

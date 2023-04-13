@@ -21,7 +21,6 @@ import {
 
 export const DetailProduct = ({ prodFilterById }) => {
   const { id, price, title, image, stock } = prodFilterById;
-
   const { isInCart, addToCart } = useContext(CartContext);
 
   const addTo = (quantity) => {

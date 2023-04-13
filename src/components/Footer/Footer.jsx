@@ -29,7 +29,7 @@ export const Footer = () => {
             <Text fontSize="md" fontWeight="600" color="gray">
               Desarrollado por
             </Text>
-            <Image borderRadius="full" w="3rem" src="assets/logo fr2.png" />
+            <Image borderRadius="full" w="3rem" src="assets/logo fr2.png" alt="logo-dev" />
           </Flex>
         </Flex>
       </Container>

@@ -11,18 +11,18 @@ export const FooterIconsGroup = () => {
       p={3}
       borderRadius="25px"
     >
-      <Link href="https://www.instagram.com/focusprint2021/">
+      <a href="https://www.instagram.com/focusprint2021/">
         <i className="fa-brands fa-instagram icon-footer"></i>
-      </Link>
-      <Link href="https://www.instagram.com/focusprint2021/">
+      </a>
+      <a href="https://www.tiktok.com/">
         <i className="fa-brands fa-tiktok icon-footer"></i>
-      </Link>
-      <Link href="https://api.whatsapp.com/send?phone=543512274743&text=Hola,%20tengo%20una%20consulta">
+      </a>
+      <a href="https://api.whatsapp.com/send?phone=543512274743&text=Hola,%20tengo%20una%20consulta">
         <i className="fa-brands fa-whatsapp icon-footer"></i>
-      </Link>
-      <Link href="https://www.gmail.com">
+      </a>
+      <a href="https://www.gmail.com">
         <i className="fa-solid fa-envelope icon-footer"></i>
-      </Link>
+      </a>
     </Flex>
   );
 };

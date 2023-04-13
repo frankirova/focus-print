@@ -1,7 +1,7 @@
 import { useContext, useEffect } from "react";
 import { CartContext } from "../../context";
 import { useForm } from "../../hooks";
-import { CheckoutCheckboxGroup, CheckoutInputGroup } from ".";
+import { CheckoutCheckboxGroup, CheckoutInputGroup } from "../Checkout";
 
 import { Flex, FormControl, Text } from "@chakra-ui/react";
 

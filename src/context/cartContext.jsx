@@ -24,7 +24,6 @@ export const CartProvider = ({ children }) => {
     cart.forEach((prod) => {
       acc += prod.quantity;
     });
-
     return acc;
   };
 

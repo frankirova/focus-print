@@ -6,7 +6,6 @@ export const useFilterByCategory = ({ products }) => {
   const productsFilterByCategory = products
     .filter((prod) => prod.category == filter)
     .map((prod) => prod);
-
   const handleChangeFilter = ({ target: { value } }) => {
     setFilter(value);
   };
