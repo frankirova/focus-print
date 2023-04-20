@@ -1,4 +1,4 @@
-import { Button } from "@chakra-ui/react";
+import { Button, Link } from "@chakra-ui/react";
 import "../styles/__ButtonWhatsapp.css";
 export const ButtonWhatsapp = () => {
   return (
@@ -12,9 +12,9 @@ export const ButtonWhatsapp = () => {
       bg="whatsapp.600"
       color="white"
     >
-      <a href="https://api.whatsapp.com/send?phone=543512274743&text=Hola,%20tengo%20una%20consulta">
+      <Link color={"white"} href="https://api.whatsapp.com/send?phone=543512274743&text=Hola,%20tengo%20una%20consulta">
         <i className="fa-brands fa-whatsapp"></i>
-      </a>
+      </Link>
     </Button>
   );
 };
