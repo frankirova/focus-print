@@ -3,6 +3,7 @@ import { NavBar, Footer } from "./components";
 
 import "./styles/__main.css";
 import { AppRouter } from "./router/AppRouter";
+import { ButtonWhatsapp } from "./components/ButtonWhatsapp";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
           <CartProvider>
             <NavBar />
             <AppRouter />
+            <ButtonWhatsapp />
             <Footer />
           </CartProvider>
         </ProductProvider>

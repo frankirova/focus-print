@@ -15,7 +15,15 @@ export const MyNewTheme = extendTheme({
         fontWeight: "normal",
         letterSpacing: "0.06em",
       },
-      button: { letterSpacing: "0.06em" },
+      button: {
+        letterSpacing: "0.06em",
+        variant: "solid",
+        bg: "primary",
+        color: "white",
+        fontSize: ["sm", "sm", "lg", "lg"],
+        fontWeight: "500",
+        _hover: { color: "primary", bg: "secondary" },
+      },
     },
   },
 });

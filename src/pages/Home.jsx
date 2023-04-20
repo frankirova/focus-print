@@ -1,4 +1,5 @@
 import { Box, Image } from "@chakra-ui/react";
+import { ButtonWhatsapp } from "../components/ButtonWhatsapp";
 
 export const Home = () => {
   return (

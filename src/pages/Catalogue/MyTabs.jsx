@@ -16,21 +16,21 @@ import {
   TabPanels,
   Tabs,
 } from "@chakra-ui/react";
+import { CardKeychains } from "./CardKeychains";
 
 export default function MyTabs({ products }) {
   const categories = [
     "Todos",
-    "Parafernalia",
-    "Arte & Deco",
     "Llaveros",
-    "Repuestos",
-    "Accesibilidad",
+    "Parafernalia",
+    "Tecnologia",
+    "Salud",
   ];
   const { nextPage, prevPage, arr } = usePagination({ products });
   const { productsFilterByCategory, handleChangeFilter } = useFilterByCategory({
     products,
   });
-
+  console.log(productsFilterByCategory);
   return (
     <Tabs colorScheme="primary">
       <TabList>
@@ -79,19 +79,14 @@ export default function MyTabs({ products }) {
             </Button>
           </Flex>
         </TabPanel>
-        {categories.slice(1, 4).map((category) => (
+        <TabPanel>
+          <CardKeychains products={productsFilterByCategory}></CardKeychains>
+        </TabPanel>
+        {categories.slice(2, 5).map((category) => (
           <TabPanel key={category}>
             <ProductsList products={productsFilterByCategory}></ProductsList>
           </TabPanel>
         ))}
-        <TabPanel>
-          <Heading fontFamily="big_noodle">Repuestos</Heading>
-          <ProductsList products={productsFilterByCategory} />
-        </TabPanel>
-        <TabPanel>
-          <Heading fontFamily="big_noodle">Accesibilidad</Heading>
-          <ProductsList products={productsFilterByCategory} />
-        </TabPanel>
       </TabPanels>
     </Tabs>
   );

@@ -37,7 +37,13 @@ export const CardProducts = ({ id, image, price, title, stock }) => {
       <Card m={4} maxW="sm" variant="filled">
         <CardBody alignItems="center">
           <Stack>
-            <Image src={image} alt={title} borderRadius="lg" m="0" />
+            <Image
+              // preload="true"
+              src={image}
+              alt={title}
+              borderRadius="lg"
+              m="0"
+            />
           </Stack>
           <Stack mt="6" spacing="3">
             <Heading size="lg" fontFamily="big_noodle" fontWeight="500">
@@ -60,23 +66,10 @@ export const CardProducts = ({ id, image, price, title, stock }) => {
         <CardFooter>
           {isLoggedIn ? (
             <ButtonGroup spacing="2">
-              <Button
-                variant="solid"
-                bg="primary"
-                color="white"
-                fontSize={["sm", "sm", "lg", "lg"]}
-                fontWeight="500"
-                onClick={() => addTo(quantity)}
-                _hover={{ color: "primary", bg: "secondary" }}
-              >
+              <Button onClick={() => addTo(quantity)}>
                 Agregar al carrito
               </Button>
-              <Button
-                as={Link}
-                to={`/Catalogo/prod/${id}`}
-                fontSize={["sm", "sm", "lg", "lg"]}
-                fontWeight="500"
-              >
+              <Button as={Link} to={`/Catalogo/prod/${id}`}>
                 Ver mas
               </Button>
             </ButtonGroup>
@@ -90,7 +83,6 @@ export const CardProducts = ({ id, image, price, title, stock }) => {
                 fontWeight="500"
                 as={Link}
                 to="/login"
-                _hover={{ color: "primary", bg: "secondary" }}
               >
                 Agregar al carrito
               </Button>

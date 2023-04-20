@@ -1,6 +1,7 @@
 @font-face {
   font-family: "big_noodle";
   src: url("/fonts/big_noodle_titling.ttf") format("truetype");
+  font-display: "swap";
   font-weight: normal;
   font-style: normal;
 }

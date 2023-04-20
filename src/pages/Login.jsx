@@ -64,12 +64,10 @@ export const Login = () => {
           />
           <Button
             onClick={handleLoginWithGoogle}
+            bg="primary"
+            fontWeight="500"
             w="full"
             my={4}
-            bg="primary"
-            color="white"
-            fontWeight="500"
-            _hover={{ color: "primary", bg: "secondary" }}
           >
             Login whit Google
           </Button>
@@ -79,11 +77,9 @@ export const Login = () => {
               onClick={handleLogin}
               type="submit"
               bg="primary"
-              color="white"
+              fontWeight="500"
               w="full"
               mb="1rem"
-              fontWeight="500"
-              _hover={{ color: "primary", bg: "secondary" }}
             >
               Iniciar sesion
             </Button>

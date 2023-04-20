@@ -4,7 +4,7 @@ import { authContext } from "../../context";
 import { LogOut, NavButtonGroup, NavLinksList } from "../../components";
 
 import "../../styles/__navbar.css";
-import { Flex, HStack, IconButton, Image } from "@chakra-ui/react";
+import { Container, Flex, HStack, IconButton, Image } from "@chakra-ui/react";
 import { faBars, faXmark } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
@@ -15,7 +15,13 @@ export const NavBar = () => {
   const { isLoggedIn } = useContext(authContext);
 
   return (
-    <Flex mt="auto" justify="space-between" bgColor="black" minH="10vh">
+    <Flex
+      minW="100vw"
+      mt="auto"
+      justify="space-around"
+      bgColor="black"
+      minH="10vh"
+    >
       <Flex
         minW="90vw"
         fontSize="xl"
@@ -35,6 +41,7 @@ export const NavBar = () => {
         >
           <NavLinksList links={links} setDisplay={setDisplay} />
         </Flex>
+
         <Flex
           gap={3}
           fontSize="2xl"
