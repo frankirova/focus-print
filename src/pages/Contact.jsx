@@ -71,6 +71,7 @@ export const Contact = () => {
                       >
                         <Button
                           textAlign="start"
+                          bg="secondary"
                           height="48px"
                           width="200px"
                           variant="ghost"
@@ -84,6 +85,7 @@ export const Contact = () => {
 
                         <Button
                           textAlign="start"
+                          bg="secondary"
                           height="48px"
                           width="210px"
                           variant="ghost"

@@ -30,7 +30,6 @@ export default function MyTabs({ products }) {
   const { productsFilterByCategory, handleChangeFilter } = useFilterByCategory({
     products,
   });
-  console.log(productsFilterByCategory);
   return (
     <Tabs colorScheme="primary">
       <TabList>
@@ -80,7 +79,18 @@ export default function MyTabs({ products }) {
           </Flex>
         </TabPanel>
         <TabPanel>
-          <CardKeychains products={productsFilterByCategory}></CardKeychains>
+          <Flex direction="row" gap={2} justify="space-between">
+            <CardKeychains
+              products={productsFilterByCategory}
+              text="Lorem ipsum dolor sit amet consectetur adipisicing elit."
+              textButton="Empresas"
+            />
+            <CardKeychains
+              products={productsFilterByCategory}
+              text="Lorem ipsum dolor sit amet consectetur adipisicing elit."
+              textButton="Personalizado"
+            />
+          </Flex>
         </TabPanel>
         {categories.slice(2, 5).map((category) => (
           <TabPanel key={category}>

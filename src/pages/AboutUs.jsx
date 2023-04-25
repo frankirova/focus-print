@@ -24,7 +24,21 @@ export const AboutUs = () => {
           />
           <Image src="//placehold.it/480x480"></Image>
         </Stack>
-        <Flex
+
+        <Stack
+          max-width="1200px"
+          direction={["column", "column", "column", "row"]}
+          alignItems="center"
+          justifyContent="space-evenly"
+        >
+          <Image src="//placehold.it/480x480"></Image>
+          <ContainerData
+            title="¿Cual es el proceso de fabricacion?"
+            text="Utilizamos la tecnología de impresión 3D de tipo FDM, este es un proceso de fabricación aditiva automatizado, en el que una impresora 3D crea un modelo físico basado en datos digitales. Esta tecnología funciona derritiendo polímeros y los empujan a través de un cabezal de impresión hasta una plataforma, donde se construye el modelo."
+          />
+        </Stack>
+
+        <Stack
           max-width="1200px"
           direction={["column", "column", "column", "row"]}
           alignItems="center"
@@ -35,7 +49,7 @@ export const AboutUs = () => {
             text="Nuestra finalidad es brindar un servicio que responda a las diferentes demandas de las personas en relación a la impresión 3D. Nos propusimos como misión lograr la unificación de servicios y simplificar el acceso a productos o servicios de impresión 3D. Y como visión, ser referentes en el ámbito de la impresión 3D."
           />
           <Image src="//placehold.it/480x480"></Image>
-        </Flex>
+        </Stack>
       </VStack>
     </Container>
   );

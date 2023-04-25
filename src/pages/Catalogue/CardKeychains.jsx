@@ -5,29 +5,27 @@ import {
   Container,
   Flex,
   Image,
+  List,
+  ListItem,
   Text,
+  UnorderedList,
 } from "@chakra-ui/react";
 
-export const CardKeychains = ({ products }) => {
+export const CardKeychains = ({ products, text, textButton }) => {
   return (
     <Flex bg="secondary">
-      <Image src="//placehold.it/400x400" />
-      <Container maxW="md" display="flex">
+      <Image src="//placehold.it/250x350" />
+      <Container maxW="sm" display="flex">
         <Flex direction="column" justify="space-evenly">
-          <Text p={4}>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Accusantium, temporibus dignissimos enim itaque pariatur praesentium
-            eum recusandae aliquam iure incidunt tenetur et minima? Totam ea
-            autem dolorum, ab quis impedit.
-          </Text>
-          <ButtonGroup p={4}>
-            <Button bg="primary" color="secondary" fontWeight='400'>
-              Personalizado
-            </Button>
-            <Button bg="primary" color="secondary" fontWeight='400'>
-              Empresas
-            </Button>
-          </ButtonGroup>
+          <UnorderedList p={4}>
+            <ListItem>Hola</ListItem>
+            <ListItem>Chau</ListItem>
+            <ListItem>Sete</ListItem>
+          </UnorderedList>
+          <Text>{text}</Text>
+          <Button bg="primary" my={2} color="secondary" fontWeight="400">
+            {textButton}
+          </Button>
         </Flex>
       </Container>
     </Flex>

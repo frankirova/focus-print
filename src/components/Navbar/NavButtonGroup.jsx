@@ -9,7 +9,8 @@ export const NavButtonGroup = ({ setDisplay }) => {
         to="/login"
         fontSize={["sm", "sm", "lg", "xl"]}
         fontWeight="500"
-        colorScheme="black"
+        bg="primary"
+        color="white"
         // onClick={() => setDisplay("none")}
       >
         Iniciar sesion
@@ -19,7 +20,8 @@ export const NavButtonGroup = ({ setDisplay }) => {
         to="/signup"
         fontSize={["sm", "sm", "lg", "xl"]}
         fontWeight="500"
-        colorScheme="black"
+        bg="primary"
+        color="white"
         // onClick={() => setDisplay("none")}
       >
         Registrarse

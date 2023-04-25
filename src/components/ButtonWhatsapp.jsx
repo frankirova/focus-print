@@ -12,7 +12,10 @@ export const ButtonWhatsapp = () => {
       bg="whatsapp.600"
       color="white"
     >
-      <Link color={"white"} href="https://api.whatsapp.com/send?phone=543512274743&text=Hola,%20tengo%20una%20consulta">
+      <Link
+        color="white"
+        href="https://api.whatsapp.com/send?phone=543512274743&text=Hola,%20tengo%20una%20consulta"
+      >
         <i className="fa-brands fa-whatsapp"></i>
       </Link>
     </Button>
