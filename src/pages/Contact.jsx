@@ -27,7 +27,13 @@ export const Contact = () => {
   const { isLoading, contactDate } = useGetContactDates();
   const { formState, handleSubmit, handleChange } = useForm();
   const { message } = useGetMessageContact(formState);
-  console.log(message);
+
+  isLoading && (
+    <Flex height="80vh" alignItems="center" justifyContent="center">
+      <Spinner size="xl" color="green" />
+    </Flex>
+  );
+
   return (
     <Container
       bg="#fff"
@@ -39,11 +45,6 @@ export const Contact = () => {
       overflow="hidden"
       minH="80vh"
     >
-      {isLoading && (
-        <Flex height="80vh" alignItems="center" justifyContent="center">
-          <Spinner size="xl" color="green" />
-        </Flex>
-      )}
       <Flex>
         <Box
           bg="rgba(236,242,246,255)"

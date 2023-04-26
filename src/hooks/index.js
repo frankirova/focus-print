@@ -6,4 +6,5 @@ export * from './useGetContactDate';
 export * from './useGetMessageCart';
 export * from './useGetMessageContact';
 export * from './useGetProducts';
-export * from './usePagination';
+export * from './usePaginationAll';
+export * from './usePaginationWithCategory';

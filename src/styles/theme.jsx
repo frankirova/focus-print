@@ -24,9 +24,6 @@ export const MyNewTheme = extendTheme({
         fontWeight: "500",
         _hover: { color: "primary", bg: "secondary" },
       },
-      a: {
-        color: "primary",
-      },
     },
   },
 });

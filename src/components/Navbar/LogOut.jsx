@@ -17,8 +17,8 @@ export const LogOut = () => {
   };
 
   return (
-      <Button onClick={handleLogOut}>
-        <FontAwesomeIcon icon={faRightFromBracket} size="lg" />
-      </Button>
+    <Button bg="black" onClick={handleLogOut}>
+      <FontAwesomeIcon icon={faRightFromBracket} size="lg" />
+    </Button>
   );
 };

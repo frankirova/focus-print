@@ -66,7 +66,14 @@ export const CardProducts = ({ id, image, price, title, stock }) => {
         <CardFooter>
           {isLoggedIn ? (
             <ButtonGroup spacing="2">
-              <Button onClick={() => addTo(quantity)}>
+              <Button
+                variant="solid"
+                bg="primary"
+                color="white"
+                fontSize={["sm", "sm", "lg", "lg"]}
+                fontWeight="500"
+                onClick={() => addTo(quantity)}
+              >
                 Agregar al carrito
               </Button>
               <Button as={Link} to={`/Catalogo/prod/${id}`}>

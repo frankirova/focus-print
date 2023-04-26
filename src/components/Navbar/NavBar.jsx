@@ -4,7 +4,7 @@ import { authContext } from "../../context";
 import { LogOut, NavButtonGroup, NavLinksList } from "../../components";
 
 import "../../styles/__navbar.css";
-import { Container, Flex, HStack, IconButton, Image } from "@chakra-ui/react";
+import { Flex, HStack, IconButton, Image } from "@chakra-ui/react";
 import { faBars, faXmark } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
@@ -16,7 +16,7 @@ export const NavBar = () => {
 
   return (
     <Flex
-      minW="100vw"
+      // minW="100vw"
       mt="auto"
       justify="space-around"
       bgColor="black"

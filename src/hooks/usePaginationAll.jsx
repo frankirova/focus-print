@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export const usePagination = ({ products }) => {
+export const usePaginationAll = ({ products }) => {
   const [currentPage, setCurrentPage] = useState(0);
 
   const arr = products.slice(currentPage, currentPage + 6);
@@ -18,3 +18,5 @@ export const usePagination = ({ products }) => {
     nextPage,
   };
 };
+
+
